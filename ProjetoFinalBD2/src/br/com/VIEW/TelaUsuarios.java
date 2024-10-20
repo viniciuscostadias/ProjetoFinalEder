@@ -33,6 +33,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -45,8 +46,13 @@ public class TelaUsuarios extends javax.swing.JFrame {
         txtNomeUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
         btnCriar = new javax.swing.JButton();
+        btnPesquisar = new javax.swing.JButton();
+        btnAtualizar = new javax.swing.JButton();
+        btnDeletar = new javax.swing.JButton();
 
         jTextField2.setText("jTextField2");
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,13 +60,25 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
         jLabel2.setText("Id");
 
-        jLabel3.setText("nome");
+        jLabel3.setText("Nome");
 
-        jLabel4.setText("email");
+        jLabel4.setText("Email");
 
-        jLabel5.setText("nome de usuario");
+        jLabel5.setText("Nome de usuario");
 
-        jLabel6.setText("senha");
+        jLabel6.setText("Senha");
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
 
         btnCriar.setText("Criar");
         btnCriar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,61 +87,92 @@ public class TelaUsuarios extends javax.swing.JFrame {
             }
         });
 
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
+
+        btnDeletar.setText("Deletar");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(btnPesquisar)
+                .addGap(64, 64, 64)
+                .addComponent(btnAtualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDeletar)
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                             .addComponent(jLabel4)
+                            .addComponent(txtEmail)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(btnCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(txtId)
-                    .addComponent(txtNome)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                    .addComponent(txtNomeUsuario)
-                    .addComponent(txtSenha))
-                .addContainerGap(220, Short.MAX_VALUE))
+                            .addComponent(txtNomeUsuario)
+                            .addComponent(jLabel6)
+                            .addComponent(txtSenha)
+                            .addComponent(txtId))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel2))
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(56, 56, 56)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addComponent(btnCriar)
+                    .addComponent(btnCriar)
+                    .addComponent(btnPesquisar)
+                    .addComponent(btnAtualizar)
+                    .addComponent(btnDeletar))
                 .addGap(22, 22, 22))
         );
 
@@ -162,6 +211,79 @@ public class TelaUsuarios extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCriarActionPerformed
 
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+       UsuarioDTO dto = new UsuarioDTO();
+       UsuarioDAO dao =  new UsuarioDAO();
+       
+       if(txtId.getText().isEmpty()) {
+           JOptionPane.showMessageDialog(null, "Obrigatorio selecionar o id para pesquisa");
+       }else{
+           int idUsu = Integer.parseInt(txtId.getText());
+           dto.setId(idUsu);
+           dao.search(dto);
+           
+       }
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+         
+        UsuarioDTO dto = new UsuarioDTO();
+        UsuarioDAO dao = new UsuarioDAO();
+
+        if (txtNome.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É obrigatorio registrar o nome");
+        } else if (txtEmail.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É obrigatorio registrar o email");
+        } else if (txtNomeUsuario.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É obrigatorio registrar o nome de usuario");
+        } else if (txtSenha.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É obrigatorio registrar o senha");
+        } else if (txtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É obrigatorio o id");
+
+        } else {
+            int idUsu = Integer.parseInt(txtId.getText());
+            String nomeUsu = txtNome.getText();
+            String emailUsu = txtEmail.getText();
+            String nomeUsuDeUsu = txtNomeUsuario.getText();
+            String senhaUsu = txtSenha.getText();
+
+            dto.setId(idUsu);
+            dto.setNome(nomeUsu);
+            dto.setEmail(emailUsu);
+            dto.setNome_usuario(nomeUsuDeUsu);
+            dto.setSenha(senhaUsu);
+
+            dao.update(dto);
+        }
+    }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+      UsuarioDAO dao =  new UsuarioDAO();
+      UsuarioDTO dto = new UsuarioDTO();
+      
+      if(txtId.getText().isEmpty()){
+          
+          JOptionPane.showMessageDialog(null, "Selecione o id para deletar");
+          
+      }else{
+          
+          int idUsu = Integer.parseInt(txtId.getText());
+          dto.setId(idUsu);
+          
+          dao.deletar(dto);
+          
+      }
+    }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,7 +320,11 @@ public class TelaUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnCriar;
+    private javax.swing.JButton btnDeletar;
+    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -206,10 +332,10 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNomeUsuario;
-    private javax.swing.JTextField txtSenha;
+    public static javax.swing.JTextField txtEmail;
+    public static javax.swing.JTextField txtId;
+    public static javax.swing.JTextField txtNome;
+    public static javax.swing.JTextField txtNomeUsuario;
+    public static javax.swing.JTextField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
