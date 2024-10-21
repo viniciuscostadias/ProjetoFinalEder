@@ -140,6 +140,8 @@ public class UsuarioDAO {
 
                 JOptionPane.showMessageDialog(null, "email ja em uso");
 
+            } else if (e.getMessage().contains("tb_usuarios.PRIMARY")) {
+                JOptionPane.showMessageDialog(null, "id ja em uso");
             } else {
 
                 JOptionPane.showMessageDialog(null, e.getMessage());
