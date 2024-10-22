@@ -17,7 +17,7 @@ A arquitetura do sistema é composta por três camadas principais:
 2. **Lógica de Negócios**: Contém as regras de negócios do sistema e manipula os dados.
 3. **Persistência de Dados**: Interage com o banco de dados MySQL para armazenar e recuperar informações.
 
-### Diagrama de Arquitetura
+### Diagrama de Arquitetura 🏛️
                                                    
                            
         Interface 🌐        ------>          Lógica de Negócios ⚙️        ------>          Banco de Dados  📊                            
